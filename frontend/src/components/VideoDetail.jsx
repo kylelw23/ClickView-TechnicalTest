@@ -1,15 +1,18 @@
 import { render } from "@testing-library/react";
-import { Link } from "react-router-dom";
 import React from "react";
 import axios from "axios";
 
-class Playlist extends React.Component {
+class VideoDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = { items: [], Loading: false };
   }
   componentDidMount() {
-    fetch("http://localhost:5000/playlist")
+    const { slug } = this.props.match.params;
+    axios
+      .post("http://localhost:5000/playlist/videos", {
+        id: slug,
+      })
       .then((res) => res.json())
       .then((json) => {
         this.setState({
@@ -28,15 +31,15 @@ class Playlist extends React.Component {
       );
     return (
       <div>
-        <h1> Playlist: </h1>
+        <h1> Videos: </h1>
         <ul>
           {items.map((item) => (
             <li key={item.id}>
               Name: {item.name}
-              <br /> Description: {item.description}
-              <br /> Videos:{" "}
-              <Link class="btn btn-primary" to={`/${item.id}`}></Link>
+              <br /> Duration: {item.duration}
+              <br /> Description : {item.description}
               <br /> Date created: {item.dateCreated}
+              <br /> Thumbnail: {item.thumbnail}
             </li>
           ))}
         </ul>
@@ -45,4 +48,4 @@ class Playlist extends React.Component {
   }
 }
 
-export default Playlist;
+export default VideoDetail;

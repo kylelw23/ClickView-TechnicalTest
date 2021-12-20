@@ -1,6 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Navigation, Footer, Home, Playlist, Videos } from "./components";
+import {
+  Navigation,
+  Footer,
+  Home,
+  Playlist,
+  Videos,
+  VideoDetail,
+} from "./components";
 
 function App() {
   return (
@@ -11,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/videos" element={<Videos />} />
+          <Route path="/:slug" element={<VideoDetail />} />
         </Routes>
         <Footer />
       </Router>
