@@ -18,7 +18,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/playlist" element={<Playlist />} />
           <Route path="/videos" element={<Videos />} />
-          <Route path="/:id" element={<VideoDetail />} />
+          <Route
+            exact
+            path="/:id"
+            render={({ match }) => <VideoDetail id={match.params.id} />}
+          />
         </Routes>
         <Footer />
       </Router>

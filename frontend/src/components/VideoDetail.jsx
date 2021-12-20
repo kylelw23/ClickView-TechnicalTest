@@ -5,11 +5,12 @@ import axios from "axios";
 class VideoDetail extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = { items: [], Loading: false };
   }
   componentDidMount() {
-    const { slug } = this.props;
-    console.log(this.props.location);
+    const { slug } = this.props.id;
+    console.log(this.props.route);
     axios
       .post("http://localhost:5000/playlist/videos", {
         id: slug,
