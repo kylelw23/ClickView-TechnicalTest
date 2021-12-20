@@ -8,7 +8,8 @@ class VideoDetail extends React.Component {
     this.state = { items: [], Loading: false };
   }
   componentDidMount() {
-    const { slug } = this.props.match.params;
+    const { slug } = this.props;
+    console.log(this.props.location);
     axios
       .post("http://localhost:5000/playlist/videos", {
         id: slug,
