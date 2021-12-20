@@ -1,12 +1,12 @@
 # ClickView-TechnicalTest
 
-Open two terminals to run the project.
-The first terminal:
-cd server
-npm install
-npm start
+Open two terminals to run the project. <br />
+The first terminal: <br />
+cd server <br />
+npm install <br />
+npm start <br />
 
-The second terminal:
-cd frontend
-npm install
-npm start
+The second terminal: <br />
+cd frontend <br />
+npm install <br /> 
+npm start<br /> 
