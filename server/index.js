@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import playlistsRoutes from "./routes/playlist.js";
+import videoRoutes from "./routes/video.js";
 
 const app = express();
 const PORT = 5000;
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/playlist", playlistsRoutes);
+app.use("/video", videoRoutes);
 
 app.get("/", (req, res) => res.send("Hello from Homepage."));
 
