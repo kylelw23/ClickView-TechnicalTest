@@ -1,4 +1,4 @@
-window.videos = [
+let videos = [
   {
     name: "Catalyst: Out of Africa",
     duration: 1628000,
@@ -225,3 +225,5 @@ window.videos = [
     thumbnail: "http://api-image.clickviewapp.com/v1/thumbnails/1551",
   },
 ];
+
+export default videos;
